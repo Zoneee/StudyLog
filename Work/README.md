@@ -106,8 +106,8 @@ DB操作放在基类中完成
 ### 目标一：完成现有抓取测试
 |抓取|进度|备注|
 |---|---|---|
-|芝麻分|10%|添加`datacache.dll`修复log异常<br />添加`sharpZipLib.dll`修复order异常
-|淘宝H5|0%|SDK为提供
+|芝麻分|10%|添加`datacache.dll`修复log异常<br />添加`sharpZipLib.dll`修复order异常<br />SDK端未填充CrawlType字段
+|淘宝H5|0%|SDK未提供
 
 ## 开始sdkService优化
 |流程|实现|目的|时间|备注|
