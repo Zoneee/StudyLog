@@ -102,11 +102,30 @@ DB操作放在基类中完成
 -----
 
 # 2019年3月3日 18:27:01
+## 开始sdkService测试
+### 目标一：完成现有抓取测试
+|抓取|进度|备注|
+|---|---|---|
+|芝麻分|10%|添加`datacache.dll`修复log异常<br />添加`sharpZipLib.dll`修复order异常
+|淘宝H5|0%|SDK为提供
+
 ## 开始sdkService优化
-|流程|实现|目的|时间|
-|---|---|---|---|
-|优化HTTP模块|0%|将HTTP于ORDER类解耦<br />CRAWLER将与HTTP耦合
+|流程|实现|目的|时间|备注|
+|---|---|---|---|---|
+|优化HTTP模块|30%|将HTTP于ORDER类解耦<br />CRAWLER将与HTTP耦合
 |优化PROXY模块|0%|HTTPPROXY借还
 |优化爬虫模块|0%|将现有爬虫使用新的CRAWLER框架重写
-|优化日志模块|0%|记录日志
+|优化日志模块|20%|记录日志||RetryHanld逻辑较为复杂
 |SDK接口模块|50%|目前使用WINFORM+HTTPLISTEN实现，在上方工作完成后将其改为MVC网站
+
+---
+
+# 框架阅读
+## 日志记录
+httpClient实现HttpMessageHandler抽象类，可以自定义用户到HTTPIO层之间Handler
+每个Handler的InnerHandler即代表该Handler的下一层Handler，每次HTTPIO将通过每一层处理
+
+|Client|Log|Retry|Connection|Service|
+|---|---|---|---|---|
+|发送|通过/处理|通过/处理|通过/处理|接收|
+|接收|通过/处理|通过/处理|通过/处理|发送|
