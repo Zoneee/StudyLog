@@ -5,7 +5,7 @@
 
 # Plan
 + 信息管理demo  
-  ++ mysql/sqlserver
+  + mysql/sqlserver
     - [ ] c/s  
-  ++ layUI  
+  + layUI  
     - [ ] b/s
