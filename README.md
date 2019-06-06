@@ -4,8 +4,8 @@
 + 观点、思想将被记录在`Standpoint`目录
 
 # Plan
-+ 信息管理demo
++ 信息管理demo  
   ++ mysql/sqlserver
-    - [ ] c/s
-  ++ layUI
+    - [ ] c/s  
+  ++ layUI  
     - [ ] b/s
