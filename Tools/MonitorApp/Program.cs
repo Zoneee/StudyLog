@@ -46,81 +46,79 @@ namespace MonitorApp
             CancellationTokenSource deployCts = new CancellationTokenSource();
             CancellationTokenSource guardCts = new CancellationTokenSource();
 
-            //var guardTask = Task.Run(async () =>
-            //{
-            //    await Task.Delay(TimeSpan.FromMinutes(3), guardCts.Token);
-            //    if (!guardCts.Token.IsCancellationRequested)
-            //    {
-            //        guardCts.Token.ThrowIfCancellationRequested();
-            //    }
-            //    processes.Clear();
-            //    config.Processes.AsParallel().ForAll(async p =>
-            //    {
-            //        if (!guardCts.Token.IsCancellationRequested)
-            //        {
-            //            guardCts.Token.ThrowIfCancellationRequested();
-            //        }
+            var guardTask = Task.Run(async () =>
+            {
+                try
+                {
+                    await slim.WaitAsync();
+                    await Task.Delay(TimeSpan.FromMinutes(3), guardCts.Token);
+                    if (!guardCts.Token.IsCancellationRequested)
+                    {
+                        guardCts.Token.ThrowIfCancellationRequested();
+                    }
+                    processes.Clear();
+                    foreach (var p in config.Processes)
+                    {
+                        if (!guardCts.Token.IsCancellationRequested)
+                        {
+                            guardCts.Token.ThrowIfCancellationRequested();
+                        }
 
-            //        Console.WriteLine($"进程无响应  >>  {p.Name}");
-            //        var process = Process.GetProcessById(p.PID);
-            //        while (!process.HasExited)
-            //        {
-            //            if (!guardCts.Token.IsCancellationRequested)
-            //            {
-            //                guardCts.Token.ThrowIfCancellationRequested();
-            //            }
-
-            //            Console.WriteLine($"正在关闭 >> {p.Name}");
-            //            process.Kill();
-            //            await Task.Delay(TimeSpan.FromSeconds(3), guardCts.Token);
-            //        }
-            //        await Task.Delay(TimeSpan.FromSeconds(10), guardCts.Token);
-            //        var newP = Process.Start(p.RootPath);
-            //        Console.WriteLine($"完成进程重启  >>  {p.Name}");
-            //        p.PID = newP.Id;
-            //        processes.Enqueue(p);
-            //    });
-            //}, guardCts.Token);
+                        Console.WriteLine($"进程无响应  >>  {p.Name}");
+                        var process = Process.GetProcessById(p.PID);
+                        while (!process.HasExited)
+                        {
+                            Console.WriteLine($"正在关闭 >> {p.Name}");
+                            process.Kill();
+                            await Task.Delay(TimeSpan.FromSeconds(3), guardCts.Token);
+                        }
+                        await Task.Delay(TimeSpan.FromSeconds(10), guardCts.Token);
+                        var newP = Process.Start(p.RootPath);
+                        Console.WriteLine($"完成进程重启  >>  {p.Name}");
+                        p.PID = newP.Id;
+                        processes.Enqueue(p);
+                    }
+                }
+                finally
+                {
+                    slim.Release();
+                }
+            }, guardCts.Token);
 
 
             var hotTask = Task.Run(async () =>
            {
-               ParallelOptions options = new ParallelOptions()
+               try
                {
-                   CancellationToken = deployCts.Token
-               };
-               var r = Parallel.ForEach(config.Processes, options, async p =>
+                   await slim.WaitAsync();
+                   foreach (var p in config.Processes)
+                   {
+                       await Task.Delay(TimeSpan.FromSeconds(10), deployCts.Token);
+                       Console.WriteLine($"进行热部署  >>  {p.Name}");
+                       await Task.Delay(TimeSpan.FromSeconds(3), deployCts.Token);
+                       Console.WriteLine($"热部署完成  >>  {p.Name}");
+                   }
+               }
+               finally
                {
-                   await Task.Delay(TimeSpan.FromSeconds(10), deployCts.Token);
-                   Console.WriteLine($"进行热部署  >>  {p.Name}");
-                   await Task.Delay(TimeSpan.FromSeconds(3), deployCts.Token);
-                   Console.WriteLine("热部署完成");
-               });
-               while (!r.IsCompleted)
-               {
-                   await Task.Delay(TimeSpan.FromSeconds(3), deployCts.Token);
+                   slim.Release();
                }
            }, deployCts.Token);
 
             try
             {
-                await slim.WaitAsync();
-                await hotTask;
+                await Task.WhenAll(hotTask, guardTask);
             }
             catch (Exception e)
             {
                 Console.WriteLine($"热部署异常：{e.ToString()}");
             }
-            finally
-            {
-                slim.Release();
-            }
 
-            var coldTask = Task.Run(() =>
+            var coldTask = Task.Run(async () =>
            {
                guardCts.Cancel();
                processes.Clear();
-               config.Processes.AsParallel().ForAll(async p =>
+               foreach (var p in config.Processes)
                {
                    Console.WriteLine($"进行冷部署  >>  {p.Name}");
                    var process = Process.GetProcessById(p.PID);
@@ -139,7 +137,7 @@ namespace MonitorApp
                    p.PID = newP.Id;
                    processes.Enqueue(p);
                    Console.WriteLine($"完成冷部署  >>  {p.Name}");
-               });
+               }
            }, deployCts.Token);
 
             try
@@ -161,7 +159,7 @@ namespace MonitorApp
             try
             {
                 await slim.WaitAsync();
-                //await guardTask;
+                await guardTask;
             }
             catch (Exception e)
             {
