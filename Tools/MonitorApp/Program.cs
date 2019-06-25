@@ -82,7 +82,7 @@ namespace MonitorApp
             //    });
             //}, guardCts.Token);
 
-           
+
             var hotTask = Task.Run(async () =>
            {
                ParallelOptions options = new ParallelOptions()
@@ -91,6 +91,7 @@ namespace MonitorApp
                };
                var r = Parallel.ForEach(config.Processes, options, async p =>
                {
+                   await Task.Delay(TimeSpan.FromSeconds(10), deployCts.Token);
                    Console.WriteLine($"进行热部署  >>  {p.Name}");
                    await Task.Delay(TimeSpan.FromSeconds(3), deployCts.Token);
                    Console.WriteLine("热部署完成");
