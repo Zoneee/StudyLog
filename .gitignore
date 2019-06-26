@@ -9,3 +9,5 @@
 /Tools/MonitorApp/obj
 /Tools/.vs/ExNameChanger/v16
 /Tools/.vs/Apps/v16
+/Tools/ThriftServiceApp/obj/Debug
+/Tools/ThriftServiceApp/bin/Debug
