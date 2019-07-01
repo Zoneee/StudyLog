@@ -11,3 +11,7 @@
 /Tools/.vs/Apps/v16
 /Tools/ThriftServiceApp/obj/Debug
 /Tools/ThriftServiceApp/bin/Debug
+/Tools/packages
+/Tools/MonitorApp/bin/Release
+/Tools/NLogApp/bin/Debug
+/Tools/NLogApp/obj/Debug
