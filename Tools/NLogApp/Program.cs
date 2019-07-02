@@ -33,23 +33,85 @@ namespace NLogApp
                 Message = (++i).ToString()
             };
 
-            Loggers.Logger.Log(logEventInfo);
+            Console.WriteLine("Next FlushTimeout Test");
+            Console.ReadLine();
+            //test flushTimeout
+            Globals.Logger.Log(logEventInfo);
             Console.WriteLine(nameof(logEventInfo));
-            Loggers.Logger.Log(logEventInfo);
-            Console.WriteLine(nameof(logEventInfo));
-            Loggers.Logger.Log(logEventInfo);
-            Console.WriteLine(nameof(logEventInfo));
+            Console.WriteLine("Delay 5s");
             await Task.Delay(TimeSpan.FromSeconds(5)).ConfigureAwait(false);
-            Loggers.Logger.Log(logEventInfo);
+            Globals.Logger.Log(logEventInfo);
+            Console.WriteLine();
+
+            Console.WriteLine("Next BufferSize Test");
+            Console.ReadLine();
+            //test bufferSize
+            Globals.Logger.Log(logEventInfo);
             Console.WriteLine(nameof(logEventInfo));
+            Globals.Logger.Log(logEventInfo);
+            Console.WriteLine(nameof(logEventInfo));
+            Globals.Logger.Log(logEventInfo);
+            Console.WriteLine(nameof(logEventInfo));
+            Console.WriteLine(nameof(logEventInfo));
+            Console.WriteLine();
+
+            Console.WriteLine("Next Default ColorConsole Test");
+            Console.ReadLine();
+            //test default ColorConsole
+            Tasks.Logger.Log(logEventInfo);
+            Tasks.Logger.Log(logEventWarn);
+            Tasks.Logger.Log(logEventError);
+            Console.WriteLine();
+
+            Console.WriteLine("Next User-defined ColorConsole Test");
+            Console.ReadLine();
+            //test condition="level >= LogLevel.Error and contains(message,'serious')"
+            Tasks.Logger.Log(LogLevel.Error, "serious test");
+            //test level >=LogLevel.Error
+            Tasks.Logger.Log(LogLevel.Error, "test");
+            //test starts-with(logger,'Example')
+            Examples.ColorConsole.Logger.Log(LogLevel.Info, "Example");
+
             Console.ReadLine();
         }
     }
 
-    static class Loggers
+    /// <summary>
+    /// global - BufferingWrapper
+    /// </summary>
+    static class Globals
     {
         public static Logger Logger { get; }
-        static Loggers()
+        static Globals()
+        {
+            Logger = LogManager.GetCurrentClassLogger();
+        }
+    }
+
+    /// <summary>
+    /// console - ColoredConsole
+    /// </summary>
+    static class Tasks
+    {
+        public static Logger Logger { get; }
+        static Tasks()
+        {
+            Logger = LogManager.GetCurrentClassLogger();
+        }
+    }
+
+
+}
+
+/// <summary>
+/// console - ColoredConsole - starts-with(logger,'Example')
+/// </summary>
+namespace Examples
+{
+    static class ColorConsole
+    {
+        public static Logger Logger { get; }
+        static ColorConsole()
         {
             Logger = LogManager.GetCurrentClassLogger();
         }
