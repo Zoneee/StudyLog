@@ -17,9 +17,9 @@
   + - [x] FileHelper 支持文件、目录 add/delete/move/copy，支持压缩/解压(zip)
   + - [x] MailHelper 支持async/await，基于SmtpClient
 + MonitorApp
-  + 进程监控Dome
+  + - [x] 进程监控Dome
 + NLogApp
-  + NLog 简单使用与简单配置
+  + - [x] NLog 简单使用与简单配置
 + AppDomainTestApp
-  + 跨AppDomain通信简单学习
+  + - [x] 跨AppDomain通信简单学习
   
