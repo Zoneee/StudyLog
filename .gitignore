@@ -21,3 +21,5 @@
 /Tools/ConsoleAppByCode/obj
 /Tools/NLogApp/obj/Release
 /Tools/ThriftServiceApp/obj
+*obj
+*bin
