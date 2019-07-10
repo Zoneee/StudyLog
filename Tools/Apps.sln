@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftServiceApp", "ThriftS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLogApp", "NLogApp\NLogApp.csproj", "{31631BF1-37D3-47C6-8720-0222215FC6D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDomainTestApp", "AppDomainTestApp\AppDomainTestApp.csproj", "{53B55EF6-D372-465B-882B-C78757BAAFED}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{13109822-86FE-41F5-BAD8-CC76371D28EB}"
 EndProject
 Global
