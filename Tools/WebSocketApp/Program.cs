@@ -23,12 +23,12 @@ namespace WebSocketApp
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-
+            var logger = LoggerHelper.CreateLoggerHelper(System.IO.Path.Combine(DateTime.Now.ToString("yyyy-MM-dd"), "exception.log"));
+            logger.Log(NLog.LogLevel.Fatal, (e.ExceptionObject as Exception).ToString());
         }
 
         private static void Application_ApplicationExit(object sender, EventArgs e)
         {
-            
         }
     }
 }

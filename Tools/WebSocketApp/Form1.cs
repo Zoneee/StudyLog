@@ -123,7 +123,6 @@ namespace WebSocketApp
 
     class LoggerHelper
     {
-        //public ConsoleLogWriter ConsoleWriter;
         public Logger Logger;
         public string Path;
         private LoggerHelper() { }
@@ -132,7 +131,6 @@ namespace WebSocketApp
         {
             var logger = new LoggerHelper();
             logger.Logger = LogManager.GetCurrentClassLogger();
-            //logger.ConsoleWriter = new ConsoleLogWriter(textBox);
             logger.Path = System.IO.Path.Combine(DateTime.Now.ToString("yyyy-MM-dd"), "log.log");
             return logger;
         }
@@ -141,7 +139,6 @@ namespace WebSocketApp
         {
             var logger = new LoggerHelper();
             logger.Logger = LogManager.GetCurrentClassLogger();
-            //logger.ConsoleWriter = new ConsoleLogWriter(textBox);
             logger.Path = path;
             return logger;
         }
@@ -155,15 +152,6 @@ namespace WebSocketApp
             };
             logEventInfo.Properties["path"] = Path;
             Logger.Log(logEventInfo);
-        }
-    }
-
-    class WsClient
-    {
-        public ClientWebSocket Client { get; set; }
-        public WsClient()
-        {
-            Client = new ClientWebSocket();
         }
     }
 }
