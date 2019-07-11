@@ -16,19 +16,20 @@ namespace WebSocketApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Win10Form());
+            Application.Run(new Win7Form());
             Application.ApplicationExit += Application_ApplicationExit;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-
+            var logger = LoggerHelper.CreateLoggerHelper(System.IO.Path.Combine(DateTime.Now.ToString("yyyy-MM-dd"), "exception.log"));
+            logger.Log(NLog.LogLevel.Fatal, (e.ExceptionObject as Exception).ToString());
         }
 
         private static void Application_ApplicationExit(object sender, EventArgs e)
         {
-            
         }
     }
 }

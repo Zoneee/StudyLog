@@ -1,6 +1,6 @@
 ﻿namespace WebSocketApp
 {
-    partial class Form1
+    partial class Win10Form
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -100,7 +100,7 @@
             this.MessageTBox.Size = new System.Drawing.Size(304, 191);
             this.MessageTBox.TabIndex = 6;
             // 
-            // Form1
+            // Win10Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,8 +112,8 @@
             this.Controls.Add(this.UnLinkBtn);
             this.Controls.Add(this.WsAddressTBox);
             this.Controls.Add(this.LinkBtn);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Win10Form";
+            this.Text = "Win10Form";
             this.ResumeLayout(false);
             this.PerformLayout();
 
