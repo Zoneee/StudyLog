@@ -22,4 +22,6 @@
   + - [x] NLog 简单使用与简单配置
 + AppDomainTestApp
   + - [x] 跨AppDomain通信简单学习
++ WebSocketClientApp
+  + - [x] Ws调试工具。貌似有其他机器无法运行问题
   
