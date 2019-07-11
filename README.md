@@ -23,5 +23,5 @@
 + AppDomainTestApp
   + - [x] 跨AppDomain通信简单学习
 + WebSocketClientApp
-  + - [x] Ws调试工具。貌似有其他机器无法运行问题
+  + - [x] WsServer调试工具。Win10与Win10以下需要区分使用。原因是Win10以下没有实现Websocket协议
   
