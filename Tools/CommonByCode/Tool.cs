@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monitor.Common
+namespace Common
 {
     public static class Tool
     {

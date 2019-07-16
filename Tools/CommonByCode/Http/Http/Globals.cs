@@ -1,5 +1,5 @@
-﻿using Jxl.Http;
-using Jxl.Logging;
+﻿using Common.HttpException;
+using Common.Logging;
 using Monitor.Common;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Jxl
+namespace Common
 {
     public static class Globals
     {

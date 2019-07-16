@@ -51,6 +51,8 @@
     <Compile Include="Http\Http\Exceptions.cs" />
     <Compile Include="Http\Http\Extensions\HttpClientExtensions.cs" />
     <Compile Include="Http\Http\Extensions\HttpRequestMessageExtensions.cs" />
+    <Compile Include="Http\Http\Globals.cs" />
+    <Compile Include="Http\Http\Loggers\DefaultLoggers.cs" />
     <Compile Include="Http\Http\Loggers\IHttpLogger.cs" />
     <Compile Include="Http\Http\Handlers\HttpConnectionHandler.cs" />
     <Compile Include="Http\Http\Handlers\HttpLoggingHandler.cs" />
@@ -61,8 +63,8 @@
     <Compile Include="Http\Http\Heads\HtpUserAgents.cs" />
     <Compile Include="Http\Http\Loggers\ILogger.cs" />
     <Compile Include="Http\Http\HttpClientConfigs.cs" />
+    <Compile Include="MailNotice\MailHelper.cs" />
     <Compile Include="MailNotice\MessageFormat.cs" />
-    <Compile Include="MailNotice\SendMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tool.cs" />
     <Compile Include="Helpers\XMLHelper.cs" />

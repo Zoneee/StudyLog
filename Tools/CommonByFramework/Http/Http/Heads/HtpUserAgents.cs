@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Jxl.Http
+namespace Common.HttpHead
 {
     internal static class HttpUserAgents
     {

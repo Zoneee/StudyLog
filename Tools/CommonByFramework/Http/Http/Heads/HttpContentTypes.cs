@@ -1,4 +1,4 @@
-﻿namespace Jxl.Http
+﻿namespace Common.HttpHead
 {
     /// <summary>
     /// Content-Type首部

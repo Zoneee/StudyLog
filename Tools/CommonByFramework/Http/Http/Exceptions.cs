@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 
-namespace Jxl.Http
+namespace Common.HttpException
 {
     /// <summary>
     /// 表示等待HTTP响应超时

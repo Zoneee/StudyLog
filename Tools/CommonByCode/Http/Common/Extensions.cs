@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Jxl
+namespace Common.Extension
 {
     /// <summary>
     /// 扩展方法

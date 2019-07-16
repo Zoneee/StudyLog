@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Jxl.Http
+namespace Common.HttpExtension
 {
     /// <summary>
     ///HTTP相关的扩展方法

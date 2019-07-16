@@ -1,4 +1,5 @@
-﻿using Jxl.Logging;
+﻿using Common.HttpExtension;
+using Common.Logging;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -6,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Jxl.Http
+namespace Common.HttpHandler
 {
     /// <summary>
     /// 负责对某个任务的每次http请求和响应进行日志记录的handler。

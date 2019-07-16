@@ -23,3 +23,6 @@
 /Tools/ThriftServiceApp/obj
 *obj
 *bin
+/NodeJs/README.pdf
+/Tools/.vs/Apps
+/Tools/SignalRChat

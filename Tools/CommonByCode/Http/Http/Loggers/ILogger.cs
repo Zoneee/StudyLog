@@ -1,4 +1,4 @@
-﻿using Jxl.Http;
+﻿using Common.HttpException;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jxl.Logging
+namespace Common.Logging
 {
     /// <summary>
     /// 日志记录器，记录需要记录的日志信息。如果需要记录HTTP请求信息到文件请使用<see cref="IHttpLogger"/>。

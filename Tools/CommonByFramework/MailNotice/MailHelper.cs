@@ -1,15 +1,14 @@
-﻿using Message;
-using System;
+﻿using System;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Message
+namespace Common.Message
 {
     /// <summary>
     /// 发送消息通知类
     /// </summary>
-    public class SendMessage
+    public class MailHelper
     {
         /// <summary>
         /// 收件人邮箱
@@ -37,7 +36,7 @@ namespace Message
         /// <param name="mailPwd">邮箱密码</param>
         /// <param name="stmpHost">邮箱服务器</param>
         /// <param name="stmpPort">邮箱服务器端口</param>
-        public SendMessage(string alarmMailAccounts, string mailAccount, string mailPwd, string stmpHost, int stmpPort)
+        public MailHelper(string alarmMailAccounts, string mailAccount, string mailPwd, string stmpHost, int stmpPort)
         {
             _alarmMailAccounts = alarmMailAccounts;
             _mailAccount = mailAccount;

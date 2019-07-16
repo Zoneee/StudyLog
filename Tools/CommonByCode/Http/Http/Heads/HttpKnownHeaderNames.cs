@@ -1,4 +1,4 @@
-﻿namespace Jxl.Http
+﻿namespace Common.HttpHead
 {
     /// <summary>
     /// 已知的HTTP Header

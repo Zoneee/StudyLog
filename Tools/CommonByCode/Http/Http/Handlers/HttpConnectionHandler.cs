@@ -1,4 +1,8 @@
-﻿using Jxl.Logging;
+﻿using Common.Extension;
+using Common.HttpException;
+using Common.HttpExtension;
+using Common.HttpHead;
+using Common.Logging;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
@@ -10,7 +14,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Jxl.Http
+namespace Common.HttpHandler
 {
     /// <summary>
     /// 对System.Net.Http.HttpMessageHandler的简单轻量级实现，由System.Net.Http.HttpClient使用。

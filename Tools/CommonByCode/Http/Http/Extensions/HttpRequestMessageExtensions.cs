@@ -1,9 +1,9 @@
-﻿using Jxl.Http;
+﻿using Common.HttpException;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Jxl.Http
+namespace Common.HttpExtension
 {
     /// <summary>
     /// HttpRequestMessage的扩展方法

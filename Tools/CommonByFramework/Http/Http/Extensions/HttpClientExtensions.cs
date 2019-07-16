@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Common.HttpException;
+using Common.HttpHead;
+using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Jxl.Http
+namespace Common.HttpExtension
 {
     /// <summary>
     /// HttpClient的扩展方法

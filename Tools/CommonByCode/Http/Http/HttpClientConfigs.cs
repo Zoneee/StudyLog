@@ -1,6 +1,7 @@
-﻿using Jxl;
-using Jxl.Http;
-using Jxl.Logging;
+﻿using Common;
+using Common.HttpException;
+using Common.HttpHandler;
+using Common.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jxl.Http
+namespace Common.HttpException
 {
     /// <summary>
     /// 提供<see cref="HttpClient"/>配置信息简单管理

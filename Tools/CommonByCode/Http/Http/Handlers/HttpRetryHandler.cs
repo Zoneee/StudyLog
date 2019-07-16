@@ -1,4 +1,8 @@
-﻿using Jxl.Logging;
+﻿using Common.Extension;
+using Common.HttpException;
+using Common.HttpExtension;
+using Common.HttpHead;
+using Common.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Jxl.Http
+namespace Common.HttpHandler
 {
     /// <summary>
     /// 负责HTTP重试，内部一般为<see cref="HttpConnectionHandler"/>。
