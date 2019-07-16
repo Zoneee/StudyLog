@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{31631BF1-37D3-47C6-8720-0222215FC6D6}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>NLogApp</RootNamespace>
-    <AssemblyName>NLogApp</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ProjectGuid>{13109822-86FE-41F5-BAD8-CC76371D28EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>CommonByFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,8 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.1.0.145, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.1.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.6.5\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.4.6.6\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -51,11 +53,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Helpers\AttributeHelper.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Http\Common\Extensions.cs" />
+    <Compile Include="Http\Http\Exceptions.cs" />
+    <Compile Include="Http\Http\Extensions\HttpClientExtensions.cs" />
+    <Compile Include="Http\Http\Extensions\HttpRequestMessageExtensions.cs" />
+    <Compile Include="Http\Http\Globals.cs" />
+    <Compile Include="Http\Http\Loggers\DefaultLoggers.cs" />
+    <Compile Include="Http\Http\Loggers\IHttpLogger.cs" />
+    <Compile Include="Http\Http\Handlers\HttpConnectionHandler.cs" />
+    <Compile Include="Http\Http\Handlers\HttpLoggingHandler.cs" />
+    <Compile Include="Http\Http\Handlers\HttpRetryHandler.cs" />
+    <Compile Include="Http\Http\Heads\HttpContentTypes.cs" />
+    <Compile Include="Http\Http\Extensions\HttpExtensions.cs" />
+    <Compile Include="Http\Http\Heads\HttpKnownHeaderNames.cs" />
+    <Compile Include="Http\Http\Heads\HtpUserAgents.cs" />
+    <Compile Include="Http\Http\Loggers\ILogger.cs" />
+    <Compile Include="Http\Http\HttpClientConfigs.cs" />
+    <Compile Include="MailNotice\MailHelper.cs" />
+    <Compile Include="MailNotice\MessageFormat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tool.cs" />
+    <Compile Include="Helpers\XMLHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -63,12 +85,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CommonByFramework\CommonByFramework.csproj">
-      <Project>{13109822-86fe-41f5-bad8-cc76371d28eb}</Project>
-      <Name>CommonByFramework</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

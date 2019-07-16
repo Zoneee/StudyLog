@@ -7,6 +7,8 @@ using NLog;
 using NLog.Targets;
 using NLog.Config;
 using NLog.Common;
+using Common.HttpExtension;
+using System.IO;
 
 namespace NLogApp
 {
@@ -14,6 +16,14 @@ namespace NLogApp
     {
         static async Task Main(string[] args)
         {
+            var client = HttpClientConfigs.CreateHttpClient();
+
+            for (int httpNum = 0; httpNum < 21; httpNum++)
+            {
+                await client.GetAsync("https://baidu.com");
+            }
+
+
             int i = 0;
             LogEventInfo logEventInfo = new LogEventInfo()
             {
@@ -72,6 +82,7 @@ namespace NLogApp
             //test starts-with(logger,'Example')
             Examples.ColorConsole.Logger.Log(LogLevel.Info, "Example");
 
+
             Console.ReadLine();
         }
     }
@@ -85,6 +96,7 @@ namespace NLogApp
         static Globals()
         {
             Logger = LogManager.GetCurrentClassLogger();
+            Logger.SetProperty("path", Path.Combine(DateTime.Now.ToString("yyyy-MM-dd"), "log.log"));
         }
     }
 
