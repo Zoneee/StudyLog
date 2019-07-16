@@ -10,7 +10,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common.HttpException
+namespace Common.HttpExtension
 {
     /// <summary>
     /// 提供<see cref="HttpClient"/>配置信息简单管理
