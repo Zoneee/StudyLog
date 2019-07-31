@@ -25,27 +25,39 @@
 + WebSocketClientApp
   + - [x] WsServer调试工具。Win10与Win10以下需要区分使用。原因是Win10以下没有实现Websocket协议
 + 自动化部署
-  + 生产服务器
-    + - [ ] Docker 环境
-  + Build Hub 服务器
+  + 开发机器
+  + 生产服务器 _一台 CentOS 7 虚拟机_
+    + - [x] Docker 环境
+  + Build Hub 服务器 _一台 CentOS 7 虚拟机_
     + - [ ] Git 环境
-    + - [ ] Docker 环境
-    + - [ ] .Net Core 环境
+    + - [x] Docker 环境
+    + - [x] .Net Core 环境
     + - [ ] Git flow 功能
     + - [ ] .Net Core publish 功能
     + - [ ] Docker Build 功能
     + - [ ] 远程控制生产服务器 Docker 功能 
       + _Push 新 Docker Images 到本地服务_
       + _让生产 Pull 新 Docker Images_
-  + - [ ] 主程序
-    + 提供开关监听和其他任意功能
-  + - [ ] Git
-    + 管理代码
-  + - [ ] Docker
-    + 管理容器
+  + 主程序
+    + - [ ] 开监听。开启接收任务
+    + - [ ] 关监听。停止接收任务
+    + - [ ] 一些其他功能
+  + Git
+    + - [ ] Master 生产分枝
+    + - [ ] Release 测试分枝
+    + - [ ] Develop 开发分枝
+  + Docker
+    + 生产/测试环境
+      - [ ] Build Images
+      - [ ] Push Images
+    + Build 服务器
+      - [ ] Pull Images
+      - [ ] Build Content
+      - [ ] Kill Content
+      - [ ] Run Content
   + 流程
     1. 提交代码
-    2. Build Core
+    2. Publish Core
       + Git Web Hook 推送代码到 Build 服务器
       + Build 主动拉取代码 Build
     3. Build Docker Images
