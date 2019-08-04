@@ -28,32 +28,51 @@
   + 开发机器
   + 生产服务器 _一台 CentOS 7 虚拟机_
     + - [x] Docker 环境
+      + - [ ] 接收远程 Docker 命令
   + Build Hub 服务器 _一台 CentOS 7 虚拟机_
-    + - [ ] Git 环境
+    + - [x] Git 环境
+    + - [ ] Git web hook 服务。仅 Develop 分枝
     + - [x] Docker 环境
     + - [x] .Net Core 环境
-    + - [ ] Git flow 功能
-    + - [ ] .Net Core publish 功能
-    + - [ ] Docker Build 功能
-    + - [ ] 远程控制生产服务器 Docker 功能 
-      + _Push 新 Docker Images 到本地服务_
-      + _让生产 Pull 新 Docker Images_
-  + 主程序
+    + - [ ] 自动化部署
+      + - [ ] 主控程序
+  + 主控程序 _远程管理服务程序_
+    + - [ ] 管理服务程序
+      + - [ ] 上/下线
+    + - [ ] 管理生产服务器Docker更新
+      + - [ ] docker stack
+    + - [ ] 接收 Git Event
+      + 本地命令
+        + - [ ] 处理 Develop 分枝更新事件
+        + - [ ] git pull develop
+        + - [ ] dotnet publish -c Release
+        + - [ ] docker Build name:tag /xxx/publish
+          + - [ ] Dockerfile
+        + - [ ] docker push name
+      + 远程命令
+        + - [ ] Pull Images
+        + - [ ] Kill Content
+        + - [ ] Rm Content
+        + - [ ] Run Content  
+  + 服务程序
     + - [ ] 开监听。开启接收任务
     + - [ ] 关监听。停止接收任务
+    + - [ ] 任务数推送。推送当前任务数到主控
     + - [ ] 一些其他功能
   + Git
+    + - [ ] 设置 Web hook 服务地址
     + - [ ] Master 生产分枝
-    + - [ ] Release 测试分枝
+    + - [ ] ~~Release 测试分枝~~
     + - [ ] Develop 开发分枝
   + Docker
-    + 生产/测试环境
-      - [ ] Build Images
-      - [ ] Push Images
     + Build 服务器
+      - [ ] Build Images
+      - [ ] Tag Images
+      - [ ] Push Images
+    + 生产/测试环境
       - [ ] Pull Images
-      - [ ] Build Content
       - [ ] Kill Content
+      - [ ] Rm Content
       - [ ] Run Content
   + 流程
     1. 提交代码
