@@ -36,34 +36,18 @@
     + - [x] .Net Core 环境
     + - [ ] 自动化部署
       + - [ ] 主控程序
-  + 主控程序 _远程管理服务程序_
-    + - [ ] 管理服务程序
-      + - [ ] 上/下线
-    + - [ ] 管理生产服务器Docker更新
-      + - [ ] docker stack
-    + - [ ] 接收 Git Event
-      + 本地命令
-        + - [ ] 处理 Develop 分枝更新事件
-        + - [ ] git pull develop
-        + - [ ] dotnet publish -c Release
-        + - [ ] docker Build name:tag /xxx/publish
-          + - [ ] Dockerfile
-        + - [ ] docker push name
-      + 远程命令
-        + - [ ] Pull Images
-        + - [ ] Kill Content
-        + - [ ] Rm Content
-        + - [ ] Run Content  
-  + 服务程序
-    + - [ ] 开监听。开启接收任务
-    + - [ ] 关监听。停止接收任务
-    + - [ ] 任务数推送。推送当前任务数到主控
-    + - [ ] 一些其他功能
+  + 主控程序 _Master_ _远程管理服务程序_
+    + 管理服务程序
+    + 创建Docker Image
+  + 服务程序 _App_
+    + 服务状态调整
+    + 程序信息整理
+    + 一些其他功能
   + Git
     + - [ ] 设置 Web hook 服务地址
-    + - [ ] Master 生产分枝
+    + - [x] Master 生产分枝
     + - [ ] ~~Release 测试分枝~~
-    + - [ ] Develop 开发分枝
+    + - [x] Develop 开发分枝
   + Docker
     + Build 服务器
       - [ ] Build Images
@@ -74,12 +58,3 @@
       - [ ] Kill Content
       - [ ] Rm Content
       - [ ] Run Content
-  + 流程
-    1. 提交代码
-    2. Publish Core
-      + Git Web Hook 推送代码到 Build 服务器
-      + Build 主动拉取代码 Build
-    3. Build Docker Images
-    4. Push Docker Images
-    5. Pull Docker Images
-    6. Build Content And Restart
