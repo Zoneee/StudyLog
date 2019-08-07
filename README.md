@@ -4,7 +4,7 @@
   + 生产服务器 _一台 CentOS 7 虚拟机_
     + - [x] Docker 环境
       + - [ ] 接收远程 Docker 命令
-  + Build Hub 服务器 _一台 CentOS 7 虚拟机_
+  + Build Hub 服务器 _一台 CentOS 7 虚拟机。目前用开发机器代替：Windows10_
     + - [x] Git 环境
     + - [ ] Git web hook 服务。仅 Develop 分枝
     + - [x] Docker 环境
@@ -48,11 +48,13 @@
     + Docker Image 版本信息
     + 生产服务器IP信息
   + Ws 接口 _App 使用_
-    + - [ ] SendAppInfo
-        + 实现功能：接收 App 信息，根据 App 信息管理 Docker 更新
-        + 实现流程：
-          + - [ ] 当 App 信息小于当前版本号则调用 `Offline` 接口
-          + - [ ] 下线状态的 App 等待任务数为零执行 `Docker Deploy` 命令
+    + - [x] SendAppInfo
+      + 实现功能：接收 App 信息，根据 App 信息管理 Docker 更新
+      + 实现流程：
+        + App 信息小于当前版本号则调用 `Offline` 接口
+        + 下线状态的 App 等待任务数为零执行 `Docker Deploy` 命令
+    + - [x] GetAppInfo
+      + 实现功能：推送 App 信息到前端
   + HTTP 接口 _Get Hook_
     + - [ ] DevelopHook
       + - [ ] 处理 Develop 分枝更新
@@ -78,12 +80,13 @@
   + 服务程序实现 _接口名命名规则从使用者角度出发。如果有疑惑则从使用者角度理解_
     + BLL 层内容
       + 服务状态调整
-        + - [ ] Online
+        + - [x] Online
           + 开启接收任务 _上线状态接口_
-        + - [ ] Offline
+        + - [x] Offline
           + 停止接收任务 _下线状态接口_
       + 程序信息整理
-        + - [ ] 推送 App 信息到中控
+        + - [x] SendAppInfo
+          + 推送 App 信息到中控
     + DAL 层内容
       + App 信息
         + IP
