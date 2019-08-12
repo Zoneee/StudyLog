@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Lifetime;
 using System.Text;
@@ -12,6 +13,8 @@ namespace AppDomainTestApp
         static AppDomain _unDefaultDomain = AppDomain.CreateDomain("UnDefaultAppDomain", null, null);
         static void Main(string[] args)
         {
+            ListHashTest();
+
             /**
              * 注
              * “默认AppDomain”
