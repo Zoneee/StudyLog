@@ -31,7 +31,8 @@ namespace Common.HttpHandler
             ServicePointManager.MaxServicePointIdleTime = 20000;
             ServicePointManager.DefaultConnectionLimit = 512; // 默认是2，其实设置为50肯定足够了。
             ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, errors) => true;//始终通过
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12; //| SecurityProtocolType.Ssl3;
         }
 
         private long _maxResponseSize = 10 * 1024 * 1024;

@@ -16,8 +16,8 @@ namespace WebSocketApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Win10Form());
-            Application.Run(new Win7Form());
+            Application.Run(new Win10Form());
+            //Application.Run(new Win7Form());
             Application.ApplicationExit += Application_ApplicationExit;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
         }

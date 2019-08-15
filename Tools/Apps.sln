@@ -13,17 +13,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLogApp", "NLogApp\NLogApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDomainTestApp", "AppDomainTestApp\AppDomainTestApp.csproj", "{53B55EF6-D372-465B-882B-C78757BAAFED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSocketApp", "WebSocketApp\WebSocketApp.csproj", "{BE3AC899-CC8B-4811-B1A8-142830C6FF64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSocketClientApp", "WebSocketApp\WebSocketClientApp.csproj", "{BE3AC899-CC8B-4811-B1A8-142830C6FF64}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRChat", "SignalRChat\SignalRChat.csproj", "{D9BFD7F6-3CC6-4580-85D2-80E6BA9F5CE4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoUniversity", "ContosoUniversity\ContosoUniversity.csproj", "{F2FDABE5-A5C8-4385-95A2-4F28E722CF78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonByCode", "CommonByCode\CommonByCode.csproj", "{7F8A640E-8035-4562-9D13-937D110C5C04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonByCode", "CommonByCode\CommonByCode.csproj", "{7F8A640E-8035-4562-9D13-937D110C5C04}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{0C41223C-4736-44AD-A22C-0FAA55913591}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonByFramework", "CommonByFramework\CommonByFramework.csproj", "{13109822-86FE-41F5-BAD8-CC76371D28EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncLockApp", "AsyncLockApp\AsyncLockApp.csproj", "{699C999E-981F-4F0A-9DCB-CCB9C9076176}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRApp", "SignalRApp\SignalRApp.csproj", "{C5C3539D-373D-430A-B066-2D0B32DCF5A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRMaster", "SignalRMaster\SignalRMaster.csproj", "{64675178-DBD0-4240-9405-ECA94897206F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +77,18 @@ Global
 		{13109822-86FE-41F5-BAD8-CC76371D28EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13109822-86FE-41F5-BAD8-CC76371D28EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13109822-86FE-41F5-BAD8-CC76371D28EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{699C999E-981F-4F0A-9DCB-CCB9C9076176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699C999E-981F-4F0A-9DCB-CCB9C9076176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699C999E-981F-4F0A-9DCB-CCB9C9076176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699C999E-981F-4F0A-9DCB-CCB9C9076176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C3539D-373D-430A-B066-2D0B32DCF5A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C3539D-373D-430A-B066-2D0B32DCF5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C3539D-373D-430A-B066-2D0B32DCF5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C3539D-373D-430A-B066-2D0B32DCF5A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64675178-DBD0-4240-9405-ECA94897206F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64675178-DBD0-4240-9405-ECA94897206F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64675178-DBD0-4240-9405-ECA94897206F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64675178-DBD0-4240-9405-ECA94897206F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
