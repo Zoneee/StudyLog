@@ -7,7 +7,7 @@
     <ProjectGuid>{BE3AC899-CC8B-4811-B1A8-142830C6FF64}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WebSocketApp</RootNamespace>
-    <AssemblyName>WebSocketApp</AssemblyName>
+    <AssemblyName>WebSocketClient</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
