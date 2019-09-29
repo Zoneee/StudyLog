@@ -11,7 +11,7 @@
  - 卜星豪/男/1996
  - 本科在读/北京科技大学计算机科学与技术专业 
  - 工作年限：2年
- - Github：https://github.com/Zoneee ( 有原创repo的Github帐号会极大的提升你的个人品牌  )
+ - Github：https://github.com/Zoneee
 
  - 期望职位：.Net中级程序员
  - 期望薪资：税前月薪15k~20k，特别喜欢的公司可例外
